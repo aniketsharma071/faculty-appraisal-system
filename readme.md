@@ -102,109 +102,78 @@ Built with modern web technologies, this application features a React.js fronten
 - **Reusable UI Components** for consistency and maintainability
 - **Optimized Performance**
 
+## 🏗 Project Structure (High-Level)
+
+```text
+├── backend
+│   ├── config/         # Cloudinary, Database, and Multer setup
+│   ├── controllers/    # Business logic (Admin, Appraisal, HOD, User)
+│   ├── middlewares/    # Auth & Role-based access logic
+│   ├── models/         # MongoDB (Mongoose) Schemas
+│   └── routes/         # API Endpoint definitions
+├── frontend
+│   ├── src/
+│   │   ├── components/ # Reusable UI, Auth, and Dashboard widgets
+│   │   ├── pages/      # Role-specific views (Admin/HOD/Faculty)
+│   │   └── utils/      # API axios instances and toast configs
+└── README.md
+```
+
 ---
+<details>
+  <summary><b>📂 Click to view Full Folder Organization</b></summary>
+
+
+```text
+├── backend
+│   ├── config/
+│   │   ├── cloudinaryConfig.js
+│   │   ├── db.js
+│   │   └── multer.js
+│   ├── controllers/
+│   │   ├── adminController.js
+│   │   ├── appraisalController.js
+│   │   ├── hodController.js
+│   │   └── userController.js
+│   ├── middlewares/
+│   │   └── authMiddleware.js
+│   ├── models/
+│   │   ├── appraisal-form-model.js
+│   │   └── user-model.js
+│   ├── routes/
+│   │   ├── admin-routes.js
+│   │   ├── appraisal-form-routes.js
+│   │   ├── hod-routes.js
+│   │   └── user-routes.js
+│   └── server.js
+├── frontend
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── auth/
+│   │   │   ├── dashboard/
+│   │   │   ├── forms/
+│   │   │   ├── layout/
+│   │   │   └── ui/
+│   │   ├── pages/
+│   │   │   ├── admin/
+│   │   │   ├── hod/
+│   │   │   ├── faculty/
+│   │   │   └── auth/
+│   │   ├── utils/
+│   │   │   ├── api.js
+│   │   │   └── toast.js
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   ├── vite.config.js
+│   └── index.html
+└── README.md
 
 ```
-## 🏗 Project Structure
-├── backend
-    ├── .gitignore
-    ├── config
-    │   ├── cloudinaryConfig.js
-    │   ├── db.js
-    │   └── multer.js
-    ├── controllers
-    │   ├── adminController.js
-    │   ├── appraisalController.js
-    │   ├── hodController.js
-    │   └── userController.js
-    ├── middlewares
-    │   └── authMiddleware.js
-    ├── models
-    │   ├── appraisal-form-model.js
-    │   └── user-model.js
-    ├── node_modules
-    ├── package-lock.json
-    ├── package.json
-    ├── .env
-    ├── routes
-    │   ├── admin-routes.js
-    │   ├── appraisal-form-routes.js
-    │   ├── hod-routes.js
-    │   └── user-routes.js
-    └── server.js
-├── frontend
-    ├── node_modules
-    ├── .gitignore
-    ├── eslint.config.js
-    ├── index.html
-    ├── package-lock.json
-    ├── package.json
-    ├── .env
-    ├── src
-    │   ├── App.css
-    │   ├── App.jsx
-    │   ├── index.css
-    │   ├── main.jsx
-    │   ├── components
-    │   │   ├── auth
-    │   │   │   ├── AdminAuth.jsx
-    │   │   │   ├── FacultyAuth.jsx
-    │   │   │   └── HODAuth.jsx
-    │   │   ├── dashboard
-    │   │   │   └── DashboardStats.jsx
-    │   │   ├── forms
-    │   │   │   ├── AdminLogin.jsx
-    │   │   │   ├── AppraisalForm.jsx
-    │   │   │   ├── EditAppraisalForm.jsx
-    │   │   │   ├── FacultyLogin.jsx
-    │   │   │   ├── HODLogin.jsx
-    │   │   │   ├── RoleBasedLogin.jsx
-    │   │   │   └── sections
-    │   │   │   │   ├── FileUploadSection.jsx
-    │   │   │   │   ├── PersonalInformationSection.jsx
-    │   │   │   │   └── ProfessionalInformationSection.jsx
-    │   │   ├── layout
-    │   │   │   ├── AuthLayout.jsx
-    │   │   │   ├── DashboardLayout.jsx
-    │   │   │   └── Navigation.jsx
-    │   │   └── ui
-    │   │   │   ├── Button.jsx
-    │   │   │   └── InputField.jsx
-    │   ├── pages
-    │   │   ├── admin
-    │   │   │   ├── Dashboard.jsx
-    │   │   │   ├── Departments.jsx
-    │   │   │   ├── EditProfile.jsx
-    │   │   │   ├── Profile.jsx
-    │   │   │   ├── ViewAppraisals.jsx
-    │   │   │   ├── ReviewAppraisal.jsx
-    │   │   │   ├── ManageUsers.jsx
-    │   │   │   ├── ViewUser.jsx
-    │   │   │   ├── EditUser.jsx
-    │   │   │   └── AdminAnalyticsDashboard.jsx
-    │   │   └── hod
-    │   │   │   ├── Dashboard.jsx
-    │   │   │   ├── EditProfile.jsx
-    │   │   │   ├── ManageFaculty.jsx
-    │   │   │   ├── FacultyAppraisals.jsx
-    │   │   │   ├── Profile.jsx
-    │   │   │   ├── ReviewAppraisal.jsx
-    │   │   │   ├── ViewAppraisals.jsx
-    │   │   │   └── Reports.jsx
-    │   │   └── faculty
-    │   │   │   ├── Dashboard.jsx
-    │   │   │   ├── EditAppraisal.jsx
-    │   │   │   ├── EditProfile.jsx
-    │   │   │   ├── Profile.jsx
-    │   │   │   ├── SubmitAppraisal.jsx
-    │   │   │   ├── ViewAppraisalDetails.jsx
-    │   │   │   └── ViewAppraisals.jsx
-    │   └── utils
-    │   │   ├── api.js
-    │   │   └── toast.js
-    └── vite.config.js
-└── readme.md
-```
+</details> 
+
+## 📄 Documentation
+- [API Documentation](docs/API.md)
+
 ## 🛠️ Technology Stack
 
 ### Frontend Technologies
@@ -218,8 +187,7 @@ Built with modern web technologies, this application features a React.js fronten
 - **[Yup](https://github.com/jquense/yup)** — JavaScript schema validation library  
 - **[html2pdf.js](https://github.com/eKoopmans/html2pdf.js)** — Client-side PDF generation from HTML  
 - **[Chart.js](https://www.chartjs.org/)** — Flexible and interactive charting library  
-- **[react-chartjs-2](https://react-chartjs-2.js.org/)** — React wrapper for Chart.js for easy integration in React apps  
-- **[dotenv](https://github.com/motdotla/dotenv)** — Environment variable management
+- **[react-chartjs-2](https://react-chartjs-2.js.org/)** — React wrapper for Chart.js for easy integration in React apps 
 
 ### Backend Technologies
 - **[Node.js](https://nodejs.org/)** — JavaScript runtime environment for server-side applications
@@ -235,8 +203,6 @@ Built with modern web technologies, this application features a React.js fronten
 
 ### Development Tools
 - **[Nodemon](https://github.com/remy/nodemon)** — Development server with automatic restart
-- **[Jest](https://jestjs.io/)** — JavaScript testing framework
-- **[Supertest](https://github.com/ladjs/supertest)** — HTTP assertion library for testing
 
 ---
 
@@ -249,7 +215,7 @@ Built with modern web technologies, this application features a React.js fronten
 - **Cloudinary Account** - [Sign Up](https://cloudinary.com/)
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/aniketsharma889/faculty-appraisal-system.git
+git clone https://github.com/aniketsharma071/faculty-appraisal-system.git
 cd faculty-appraisal-system
 ```
 
@@ -311,40 +277,7 @@ Frontend application will start on **http://localhost:5173**
 
 ---
 
-## 🔗 API Endpoints
 
-### Authentication Routes
-- `POST /api/users/register` - User registration
-- `POST /api/users/login` - User login
-- `GET /api/users/profile` - Get user profile
-- `PUT /api/users/profile/:id` - Update user profile
-
-### Faculty Appraisal Routes
-- `POST /api/appraisal-form/submit-appraisal` - Submit new appraisal
-- `GET /api/appraisal-form/my-appraisals` - Get faculty's appraisals
-- `GET /api/appraisal-form/appraisal/:id` - Get specific appraisal
-- `PUT /api/appraisal-form/update-appraisal/:id` - Update appraisal
-- PDF generation handled client-side using html2pdf.js
-
-### HOD Routes
-- `GET /api/hod/appraisals` - Get department appraisals
-- `GET /api/hod/appraisals/:id` - Get specific appraisal details
-- `POST /api/hod/review` - Submit HOD review
-- `GET /api/hod/dashboard-stats` - Get dashboard statistics
-- `GET /api/hod/department-faculty` - Get department faculty list
-- `GET /api/hod/reports` - Get hod reports.
-
-### Admin Routes
-- `GET /api/admin/appraisals` - Get all appraisals
-- `GET /api/admin/appraisals/:id` - Get specific appraisal
-- `POST /api/admin/review` - Submit admin review
-- `GET /api/admin/dashboard-stats` - Get system statistics
-- `GET /api/admin/users` - Get all users
-- `PUT /api/admin/users/:id` - Update user details
-- `PUT /api/admin/users/:id/role` - Promote user role
-- `GET /api/admin/departments` - Get departments list
-
----
 
 ## 👥 User Roles & Permissions
 
@@ -370,14 +303,6 @@ Frontend application will start on **http://localhost:5173**
 - Genrate analytics reports with pdf and excel export
 ---
 
-## 🧪 Testing
-
-### API Testing Tools
-- **[Postman](https://www.postman.com/)** - API development and testing
-- **cURL** - Command-line HTTP client
-- **PowerShell Invoke-RestMethod** - Windows HTTP client
-
----
 
 ## 📚 Additional Resources & References
 
@@ -406,8 +331,6 @@ Frontend application will start on **http://localhost:5173**
 - **[react-chartjs-2](https://react-chartjs-2.js.org/)**
 ### Development Tools
 - **[Nodemon Documentation](https://github.com/remy/nodemon#nodemon)**
-- **[Jest Testing Framework](https://jestjs.io/docs/getting-started)**
-- **[Supertest Documentation](https://github.com/ladjs/supertest#readme)**
 
 ---
 
