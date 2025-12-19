@@ -116,6 +116,7 @@ Built with modern web technologies, this application features a React.js fronten
 │   │   ├── components/ # Reusable UI, Auth, and Dashboard widgets
 │   │   ├── pages/      # Role-specific views (Admin/HOD/Faculty)
 │   │   └── utils/      # API axios instances and toast configs
+├── docs                # API documentation
 └── README.md
 ```
 
@@ -166,12 +167,14 @@ Built with modern web technologies, this application features a React.js fronten
 │   │   └── main.jsx
 │   ├── vite.config.js
 │   └── index.html
+├── docs
+│   └── API.md
 └── README.md
 
 ```
 </details> 
 
-## 📄 Documentation
+## 📄API Documentation
 - [API Documentation](docs/API.md)
 
 ## 🛠️ Technology Stack
@@ -300,37 +303,6 @@ Frontend application will start on **http://localhost:5173**
 - User management and role assignments
 - Department configuration
 - Promote or Demote Faculty and HOD
-- Genrate analytics reports with pdf and excel export
----
-
-
-## 📚 Additional Resources & References
-
-### Core Technologies Documentation
-- **[React.js Documentation](https://reactjs.org/docs/getting-started.html)**
-- **[Node.js Documentation](https://nodejs.org/en/docs/)**
-- **[Express.js Guide](https://expressjs.com/en/starter/installing.html)**
-- **[MongoDB Manual](https://www.mongodb.com/docs/manual/)**
-- **[Mongoose Documentation](https://mongoosejs.com/docs/)**
-
-### Authentication & Security
-- **[JWT.io](https://jwt.io/)** - JWT token debugger and documentation
-- **[bcrypt Documentation](https://github.com/kelektiv/node.bcrypt.js#readme)**
-- **[CORS Documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS)**
-
-### Frontend Libraries
-- **[Tailwind CSS Documentation](https://tailwindcss.com/docs)**
-- **[Vite Documentation](https://vitejs.dev/guide/)**
-- **[React Router Documentation](https://reactrouter.com/en/main)**
-- **[Axios Documentation](https://axios-http.com/docs/intro)**
-- **[Formik Documentation](https://formik.org/docs/overview)**
-- **[Yup Validation Documentation](https://github.com/jquense/yup#readme)**
-- **[Lucide Icons](https://lucide.dev/icons/)**
-- **[html2pdf.js Documentation](https://github.com/eKoopmans/html2pdf.js)**
-- **[Chart.js](https://www.chartjs.org/docs/latest/)**
-- **[react-chartjs-2](https://react-chartjs-2.js.org/)**
-### Development Tools
-- **[Nodemon Documentation](https://github.com/remy/nodemon#nodemon)**
-
+- Generate analytics reports with PDF and Excel export
 ---
 
